@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-PX4_AWS_KEY=$1
-PX4_AWS_SECRET=$2
 PX4_S3_CFG=~/.s3cfg
 
 cp CI-Tools/s3cfg $PX4_S3_CFG
 
+# requires PX4_AWS_KEY and PX4_AWS_SECRET set as environment variables
 sed -i "s/ACCESS_KEY/$PX4_AWS_KEY/" $PX4_S3_CFG
 sed -i "s|SECRET_KEY|$PX4_AWS_SECRET|" $PX4_S3_CFG
 
