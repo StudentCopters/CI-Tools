@@ -82,7 +82,7 @@ function createRequestObject(){
 /* The variable http will hold our new XMLHttpRequest object. */
 var http = createRequestObject(); 
 function getList(){
-	http.open('get', location.protocol+'//'+location.hostname);
+	http.open('get', location.protocol+'//'+location.hostname+'/?prefix='+location.pathname.substring(1, location.pathname.lastIndexOf('/')));
 	http.onreadystatechange = handleList; 
 	http.send(null);
 }
@@ -112,7 +112,7 @@ for(i=0; i<filex.length; i++){
 	size = filex[i].getElementsByTagName('Size')[0].firstChild.data;
 	name = filex[i].getElementsByTagName('Key')[0].firstChild.data;
 	lastmod = filex[i].getElementsByTagName('LastModified')[0].firstChild.data;
-        link = "<A HREF=\""+name+"\">"+name+"</A>";
+        link = "<A HREF=\"../"+name+"\">"+name+"</A>";
         fileData[0] = name;
         fileData[1] = size;
         fileData[2] = lastmod;
