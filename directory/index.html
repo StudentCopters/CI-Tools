@@ -112,7 +112,8 @@ for(i=0; i<filex.length; i++){
 	size = filex[i].getElementsByTagName('Size')[0].firstChild.data;
 	name = filex[i].getElementsByTagName('Key')[0].firstChild.data;
 	lastmod = filex[i].getElementsByTagName('LastModified')[0].firstChild.data;
-        link = "<A HREF=\"../"+name+"\">"+name+"</A>";
+	full_url = location.protocol+'//'+location.hostname+'/'+name
+        link = "<A HREF=\""+full_url+"\">"+name+"</A>";
         fileData[0] = name;
         fileData[1] = size;
         fileData[2] = lastmod;
