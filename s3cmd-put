@@ -6,7 +6,7 @@ DST=${@: -1}
 
 # requires PX4_AWS_BUCKET and TRAVIS_BRANCH set as environment variables
 if [ "$TRAVIS_PULL_REQUEST" == "false" ]; then
-  if [[ "$TRAVIS_BRANCH" == "master" || "$TRAVIS_BRANCH" == "beta" || "$TRAVIS_BRANCH" == "stable" ]]; then
+  if [[ "$TRAVIS_BRANCH" == "master" || "$TRAVIS_BRANCH" == "beta" || "$TRAVIS_BRANCH" == "stable" || "$TRAVIS_BRANCH" == "nuttx_next" ]]; then
     s3cmd --acl-public put $SRC s3://$PX4_AWS_BUCKET/$DST
   fi
 fi
